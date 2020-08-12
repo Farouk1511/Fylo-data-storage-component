@@ -26,6 +26,7 @@ body {
   min-height: 100vh;
   position: relative;
   font-weight: 500;
+  overflow: hidden;
 }
 
 .main-head {
@@ -89,10 +90,10 @@ body {
   margin-top: 10px;
   font-weight: 700;
 }
-.zero{
+.zero {
   float: left;
 }
-.max{
+.max {
   float: right;
 }
 .progression {
@@ -126,29 +127,28 @@ body {
   -o-border-radius: 20px;
 }
 
-.speech-container{
-  position: absolute;
+.speech-container {
+  position: fixed;
   top: 350px;
   right: 750px;
 }
 
-.speech-bubble p{
+.speech-bubble p {
   font-size: 30px;
-  
 }
 
-.speech-bubble p span{
+.speech-bubble p span {
   font-size: 10px;
   color: hsl(229, 7%, 55%);
 }
 
-.speech-bubble{
+.speech-bubble {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 150px;
   height: 60px;
-  background-color:#fff;
+  background-color: #fff;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -156,8 +156,8 @@ body {
   -o-border-radius: 5px;
   position: relative;
 }
-.speech-bubble::before{
-  content: '';
+.speech-bubble::before {
+  content: "";
   width: 0;
   height: 0;
   position: absolute;
@@ -166,13 +166,45 @@ body {
   border-top: 10px solid #fff;
   border-bottom: 10px solid transparent;
   right: 0;
-  bottom:-15px;
+  bottom: -15px;
 }
 
 .attribution {
+  margin-top: 400px;
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    background-image: url("./images/bg-mobile.png");
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 375px;
+    display: flex;
+    flex-direction: column;
+  }
+  .main-head {
+    position: static;
+    width: 300px;
+  }
+  .main-text {
+    margin-top: 15px;
+    position: static;
+    width: 300px;
+  }
+  .progression {
+    width: 230px;
+  }
+  .speech-container {
+    position: fixed;
+    top: 550px;
+    right: 90px;
+  }
+  .speech-bubble::before {
+    opacity: 0;
+  }
 }
